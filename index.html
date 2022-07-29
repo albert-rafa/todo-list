@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,7 +8,16 @@
     <title>ToDo List</title>
 
     <link rel="stylesheet" href="style.css">
+
+    <!-- Poppins font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200&display=swap" rel="stylesheet"> 
+
+    <!-- Fontawesome kit -->
+    <script src="https://kit.fontawesome.com/17ebd240df.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
     <div class="container">
         <div class="box">
@@ -19,16 +29,35 @@
                         name="task"
                         id="task"
                         placeholder="Add a task"
+                        autocomplete="off"
+                        maxlength="100"
                         required
                     >
-                    <button type="submit" onclick="addTask()">+</button>
+                    <button type="submit" onclick="addTask()"><i class="fa-solid fa-plus"></i></button>
                 </form>
             </header>
             <main>
                 <ul>
-                    <li>Jogar The Last of Us 2</li>
-                    <li>Estudar cálculo</li>
-                    <li>Lavar a louça</li>
+                    <li>
+                        <span class="task-text">Jogar The Last of Us 2</span>
+                        <button><i class="fa-solid fa-trash"></i></button>
+                    </li>
+                    <li>
+                        <span class="task-text">Estudar cálculo</span>
+                        <i class="fa-solid fa-trash"></i>
+                    </li>
+                    <li>
+                        <span class="task-text">Lavar louça</span>
+                        <i class="fa-solid fa-trash"></i>
+                    </li>
+                    <li>
+                        <span class="task-text">Vou colocar aqui uma tarefa muito muito mas muito muito longa pra ver o que acontece</span>
+                        <i class="fa-solid fa-trash"></i>
+                    </li>
+                    <li>
+                        <span class="task-text">Vou colocar aqui uma tarefa muito muito mas muito muito longa pra ver o que acontece</span>
+                        <i class="fa-solid fa-trash"></i>
+                    </li>
                 </ul>
             </main>
         </div>
@@ -39,4 +68,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
