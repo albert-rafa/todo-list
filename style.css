@@ -25,17 +25,20 @@ body {
     justify-content: center;
     align-items: center;
 
-    font-size: 1.3rem;
+    font-size: 1.2rem;
 }
 
 .box {
     width: 70vw;
     max-width: 500px;
+    overflow: hidden;
 
     display: flex;
     flex-direction: column;
 
-    background-color: brown;
+    background-color: rgb(232, 241, 244);
+
+    box-shadow: 5px 5px 20px rgba(41, 79, 93, 0.677);
 }
 
 header {
@@ -43,6 +46,8 @@ header {
     flex-direction: row;
 
     width: 100%;
+
+    box-shadow: 0px 3px 5px rgba(207, 215, 218, 0.904);
 }
 
 form {
@@ -91,7 +96,7 @@ main {
     padding: 5% 3%;
 }
 
-ul {
+main ul {
     list-style: none;
 
     height: fit-content;
@@ -103,7 +108,7 @@ ul {
     gap: 1.2em;
 }
 
-li {
+main ul li {
     width: 100%;
 
     display: flex;
@@ -118,12 +123,14 @@ li {
 
 main button {
     background-color: transparent;
-    height: 100%;
-    width: max-content;
+    margin-left: 3%;
+    width: 19px;
+    cursor: pointer;
+    visibility: hidden;
 }
 
-i {
-    height: 100%;
+main li:hover button{
+    visibility: visible;
 }
 
 footer {
