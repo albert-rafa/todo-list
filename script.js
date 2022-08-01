@@ -12,6 +12,7 @@ addInput.addEventListener('keydown', (e) => {
         addTask(task)
     }
 })
+
 function addTask(task) {
     const taskList = document.querySelector('main ul')
 
@@ -26,7 +27,7 @@ function addTask(task) {
     const deleteIcon = document.createElement('i')
     deleteIcon.classList.add('fa-solid', 'fa-trash')
 
-    // Add event listener for the delete button
+    deleteIcon.addEventListener('click', deleteTask)
 
     button.appendChild(deleteIcon)
     newTask.appendChild(text)
@@ -35,4 +36,11 @@ function addTask(task) {
     taskList.insertBefore(newTask, taskList.childNodes[0])
 
     addInput.value = ''
+}
+
+function deleteTask() {
+    const task = this.parentNode.parentNode;
+    const taskList = task.parentNode;
+
+    taskList.removeChild(task)
 }

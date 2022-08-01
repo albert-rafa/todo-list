@@ -128,6 +128,10 @@ main li:hover button{
     visibility: visible;
 }
 
+main li:hover button:hover {
+    color: rgb(232, 50, 40);
+}
+
 footer {
     background-color: transparent;
     font-size: small;
