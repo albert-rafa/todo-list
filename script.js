@@ -1,3 +1,15 @@
+function emptyList() {
+    const list = document.querySelector('main ul')
+    const main = document.querySelector('main')
+    if(!list.childNodes.length) {
+        main.style.padding = '0px';
+    } else {
+        main.style.padding = '5% 3%'
+    }
+}
+
+emptyList();
+
 const addButton = document.querySelector('header button')
 const addInput = document.querySelector('header input')
 addButton.addEventListener('click', () => {
@@ -36,6 +48,7 @@ function addTask(task) {
     taskList.insertBefore(newTask, taskList.childNodes[0])
 
     addInput.value = ''
+    emptyList();
 }
 
 function deleteTask() {
@@ -43,4 +56,5 @@ function deleteTask() {
     const taskList = task.parentNode;
 
     taskList.removeChild(task)
+    emptyList();
 }
