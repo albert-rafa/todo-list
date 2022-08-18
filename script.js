@@ -1,10 +1,10 @@
 function emptyList() {
     const list = document.querySelector('main ul')
     const main = document.querySelector('main')
-    if(!list.childNodes.length) {
-        main.style.padding = '0px';
+    if(list.childElementCount == 0) {
+        main.style.padding = '0';
     } else {
-        main.style.padding = '5% 3%'
+        list.lastElementChild.style.borderBottom = 'none'
     }
 }
 
@@ -34,16 +34,25 @@ function addTask(task) {
     text.classList.add('task-text')
     text.innerText = task
 
-    const button = document.createElement('button')
+    const buttons = document.createElement('div')
+    buttons.classList.add('buttons')
 
+    const checkButton = document.createElement('button')
+    const deleteButton = document.createElement('button')
+
+    const checkIcon = document.createElement('i')
+    checkIcon.classList.add('fa-solid', 'fa-check')
     const deleteIcon = document.createElement('i')
     deleteIcon.classList.add('fa-solid', 'fa-trash')
 
     deleteIcon.addEventListener('click', deleteTask)
+    checkIcon.addEventListener('click', checkTask)
 
-    button.appendChild(deleteIcon)
+    checkButton.appendChild(checkIcon)
+    deleteButton.appendChild(deleteIcon)
+    buttons.append(checkButton, deleteButton)
     newTask.appendChild(text)
-    newTask.appendChild(button)
+    newTask.appendChild(buttons)
 
     taskList.insertBefore(newTask, taskList.childNodes[0])
 
@@ -52,9 +61,16 @@ function addTask(task) {
 }
 
 function deleteTask() {
-    const task = this.parentNode.parentNode;
+    const task = this.parentNode.parentNode.parentNode;
     const taskList = task.parentNode;
+
+    console.log("Deleting: " + task.innerText)
 
     taskList.removeChild(task)
     emptyList();
+}
+
+function checkTask() {
+    task = this.parentNode.parentNode.parentNode
+    console.log("Checking: " + task.innerText)
 }
