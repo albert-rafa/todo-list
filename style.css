@@ -95,6 +95,8 @@ main ul {
     list-style: none;
 
     height: fit-content;
+    max-height: 75vh;
+    overflow-y: auto;
 
     display: flex;
     flex-direction: column;
