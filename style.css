@@ -25,7 +25,7 @@ body {
     justify-content: center;
     align-items: center;
 
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 }
 
 .box {
@@ -131,8 +131,13 @@ main .buttons {
 main button {
     background-color: transparent;
     margin-left: 3%;
-    width: 19px;
     cursor: pointer;
+}
+
+.checked {
+    color: rgb(180, 180, 180);
+    text-decoration: line-through;
+    text-decoration-thickness: 1px;
 }
 
 footer {

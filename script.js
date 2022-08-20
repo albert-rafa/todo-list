@@ -41,9 +41,9 @@ function addTask(task) {
     const deleteButton = document.createElement('button')
 
     const checkIcon = document.createElement('i')
-    checkIcon.classList.add('fa-solid', 'fa-check')
+    checkIcon.classList.add('fa-solid', 'fa-check', 'fa-lg')
     const deleteIcon = document.createElement('i')
-    deleteIcon.classList.add('fa-solid', 'fa-trash')
+    deleteIcon.classList.add('fa-solid', 'fa-trash', 'fa-lg')
 
     deleteIcon.addEventListener('click', deleteTask)
     checkIcon.addEventListener('click', checkTask)
@@ -72,5 +72,6 @@ function deleteTask() {
 
 function checkTask() {
     task = this.parentNode.parentNode.parentNode
+    task.classList.toggle('checked')
     console.log("Checking: " + task.innerText)
 }
