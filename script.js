@@ -93,7 +93,6 @@ function displayStorage() {
     for (let i = 0; i < data.length; i++) {
         const text = data[i].task
         const checked = data[i].check
-
         createTask(text, checked)
     }
 }
@@ -107,7 +106,7 @@ function addStorage(t, c) {
         task: t,
         check: c
     }
-    data.push(tempTask)
+    data.unshift(tempTask) // add at the beginning
 
     updateStorage()
 }
