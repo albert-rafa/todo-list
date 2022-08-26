@@ -85,8 +85,17 @@ function checkTask() {
     task.classList.toggle('checked')
     console.log("Checking: " + task.innerText)
 
-    delStorage(task.innerText)
-    addStorage(task.innerText, task.classList.contains('checked'))
+    const search = data.find(t => t.task === task.innerText);
+    const index = data.indexOf(search)
+
+    const tempTask = {
+        task: task.innerText,
+        check: task.classList.contains('checked')
+    }
+
+    data.splice(index, 1, tempTask)
+
+    updateStorage()
 }
 
 function displayStorage() {
@@ -106,7 +115,7 @@ function addStorage(t, c) {
         task: t,
         check: c
     }
-    data.unshift(tempTask) // add at the beginning
+    data.push(tempTask) 
 
     updateStorage()
 }
